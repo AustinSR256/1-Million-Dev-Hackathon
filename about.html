@@ -285,6 +285,102 @@ header {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* CV Download Button */
+.cv-download {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cv-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    transition: all 0.4s ease;
+    z-index: 0;
+}
+
+.cv-button:hover::before {
+    left: 0;
+}
+
+.cv-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.cv-button:active {
+    transform: translateY(-1px) scale(1.02);
+    transition: all 0.1s ease;
+}
+
+.cv-button i {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.cv-button span {
+    z-index: 1;
+    position: relative;
+}
+
+.cv-button:hover i {
+    transform: translateY(-2px);
+    animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(-2px); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+/* Pulse effect */
+.cv-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.6s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.cv-button:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
 .highlight {
     background: linear-gradient(45deg, #fff, #f0f0f0);
     -webkit-background-clip: text;
@@ -453,7 +549,6 @@ header {
          <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="about.html" class="active">About</a>
-            
             <a href="service.html">Services</a>
             <a href="contact.html">Contact</a>
          </nav>
@@ -465,7 +560,7 @@ header {
             
             <div class="section">
                <h2><i class="fas fa-user"></i> About Me</h2>
-               <p>I'm a passionate <span class="highlight">frontend developer</span> and <span class="highlight">Civil and Environmental Engineering student</span> at Makerere University. My journey in tech began with curiosity about how digital solutions can support infrastructure, education, and environmental sustainability.</p>
+               <p>I'm a passionate <span class="highlight">Software Developer</span> and <span class="highlight">Civil Engineer</span> from Makerere University. My journey in tech began with curiosity about how digital solutions can support infrastructure, education, and environmental sustainability.</p>
                <p>What drives me is the intersection of <span class="highlight">engineering precision</span> and <span class="highlight">creative problem-solving</span>. I believe technology has the power to build sustainable communities and solve real-world challenges. Whether I'm coding a responsive website or designing infrastructure solutions, I approach every project with enthusiasm and attention to detail.</p>
             </div>
 
@@ -473,11 +568,15 @@ header {
                <h2><i class="fas fa-graduation-cap"></i> Educational Background</h2>
                <h3>Bachelor of Science in Civil and Environmental Engineering</h3>
                <p><strong>Institution:</strong> Makerere University, Uganda</p>
-               <p><strong>Expected Graduation:</strong> 2026</p>
-               <p><strong>Relevant Coursework:</strong> Structural Analysis, Environmental Impact Assessment, Engineering Mathematics, Computer-Aided Design</p>
+               <p><strong>Specilization:</strong> Structural Design, Water Resources Engineering, Foundation Design, Computer-Aided Design</p>
+               <h3>Certification in Software Development</h3>
+               <p><strong>Institution:</strong> Power Learn Project Academy</p>
+               <p><strong>Specilization:</strong> Web Development, Fullstock Development, Machine Learning</p>
+               
                <div class="cv-download">
-                  <a href="#" class="cv-button" download="Ssengendo_Austin_CV.pdf">
-                     <i class="fas fa-download"></i> Download My CV
+                  <a href="cv.pdf" class="cv-button" download="Ssengendo_Austin_CV.pdf">
+                     <i class="fas fa-download"></i>
+                     <span>Download My CV</span>
                   </a>
                </div>
             </div>
@@ -485,16 +584,6 @@ header {
             <div class="section">
                <h2><i class="fas fa-code"></i> Programming Languages</h2>
                <div class="skills-grid">
-                  <div class="skill-item">
-                     <i class="fab fa-html5"></i>
-                     <div>HTML5</div>
-                     <small>Advanced</small>
-                  </div>
-                  <div class="skill-item">
-                     <i class="fab fa-css3-alt"></i>
-                     <div>CSS3</div>
-                     <small>Advanced</small>
-                  </div>
                   <div class="skill-item">
                      <i class="fab fa-js"></i>
                      <div>JavaScript</div>
@@ -506,42 +595,54 @@ header {
                      <small>Learning</small>
                   </div>
                   <div class="skill-item">
-                     <i class="fas fa-database"></i>
-                     <div>SQL</div>
+                     <i class="fab fa-java"></i>
+                     <div>Java</div>
+                     <small>Learning</small>
+                  </div>
+                  <div class="skill-item">
+                     <i class="fas fa-code"></i>
+                     <div>TypeScript</div>
+                     <small>Learning</small>
+                  </div>
+                  <div class="skill-item">
+                     <i class="fas fa-hashtag"></i>
+                     <div>C#</div>
                      <small>Basic</small>
                   </div>
                   <div class="skill-item">
-                     <i class="fab fa-git-alt"></i>
-                     <div>Git & GitHub</div>
-                     <small>Intermediate</small>
+                     <i class="fas fa-cogs"></i>
+                     <div>C++</div>
+                     <small>Basic</small>
                   </div>
                </div>
             </div>
 
             <div class="section">
                <h2><i class="fas fa-lightbulb"></i> Interests & Passions</h2>
-               <p><strong>Sustainable Technology:</strong> I'm fascinated by how technology can drive environmental solutions and create more sustainable infrastructure systems.</p>
-               <p><strong>Web Accessibility:</strong> Passionate about creating inclusive digital experiences that work for everyone, regardless of their abilities or devices.</p>
-               <p><strong>Smart Cities:</strong> Excited about the potential of IoT and data analytics in creating more efficient, livable urban environments.</p>
-               <p><strong>Frontend Innovation:</strong> Always exploring the latest in CSS animations, responsive design patterns, and user experience optimization.</p>
-               <p><strong>Community Impact:</strong> Interested in using technology to solve local challenges in education, healthcare, and infrastructure in Uganda and beyond.</p>
+                <p><strong>Technology & Innovation:</strong> I'm passionate about pushing the boundaries of what technology can do to change the world.</p>
+                <p><strong>Design & Aesthetics:</strong> Fascinated by elegant, minimalist design that blends form and function beautifully.</p>
+                <p><strong>Product Perfection:</strong> I care deeply about crafting high-quality products that are intuitive, reliable, and delightful to use.</p>
+                <p><strong>Art & Creativity:</strong> I believe great technology comes from the intersection of art, creativity, and engineering.</p>
+                <p><strong>Empowering Others:</strong> Motivated to build tools and experiences that help people express themselves and do amazing things.</p>
+
             </div>
 
             <div class="section">
                <h2><i class="fas fa-rocket"></i> Projects & Experience</h2>
-               <p><strong>Portfolio Website:</strong> Designed and built this site using vanilla HTML and CSS as part of the PLP Hackathon Challenge. <a href="#" class="project-link">View Live Site</a> | <a href="#" class="project-link">GitHub Repo</a></p>
-               <p><strong>Responsive Landing Page:</strong> Created a modern, mobile-first landing page with CSS Grid and Flexbox. <a href="#" class="project-link">View Project</a></p>
-               <p><strong>Engineering Calculator:</strong> Built a web-based calculator for common civil engineering calculations. <a href="#" class="project-link">Try Calculator</a></p>
+               <p><strong>Portfolio Website:</strong> Designed and built this site using vanilla HTML and CSS as part of the PLP Hackathon Challenge. <a href="https://github.com/AustinSR256/1-Million-Dev-Hackathon" class="project-link">GitHub Repo</a></p>
+               <p><strong>Responsive Landing Page:</strong> Created a modern, mobile-first landing page with CSS Grid and Flexbox. <a href="https://github.com/AustinSR256/responsive-landing-page-headphones" class="project-link">GitHub Repo</a></p>
+               <p><strong>Engineering Calculator:</strong> Built a web-based calculator for common civil engineering calculations. <a href="https://github.com/AustinSR256/Engineering-Calculator" class="project-link">GitHub Repo</a></p>
                <p><strong>Environmental Impact Tracker:</strong> Developing a tool to track and visualize environmental metrics. <a href="#" class="project-link">Coming Soon</a></p>
-               <p><strong>Engineering Focus:</strong> Applying engineering principles to real-world infrastructure and digital solutions.</p>
-               <p><strong>Continuous Learning:</strong> Actively participating in workshops and training sessions in both engineering and technology.</p>
             </div>
 
             <div class="section">
                <h2><i class="fas fa-heart"></i> My Values</h2>
-               <p><strong>Growth Mindset:</strong> Always learning and exploring new ways to improve and innovate.</p>
-               <p><strong>Collaboration:</strong> I believe in the power of teamwork and sharing knowledge.</p>
-               <p><strong>Sustainability:</strong> Passionate about using technology to create eco-conscious solutions.</p>
+                <p><strong>Impact & Responsibility:</strong> I strive to use my skills and resources to make a meaningful difference in the world.</p>
+                <p><strong>Lifelong Learning:</strong> I value curiosity and continuous learning as drivers of innovation and growth.</p>
+                <p><strong>Innovation & Optimism:</strong> I believe technology and thoughtful action can solve the world’s biggest challenges.</p>
+                <p><strong>Collaboration & Humility:</strong> I appreciate diverse perspectives and believe in learning from others to build better solutions.</p>
+                <p><strong>Hard Work & Focus:</strong> I’m committed to staying focused, working diligently, and delivering results that matter.</p>
+
             </div>
 
             <hr class="divider">
@@ -552,10 +653,10 @@ header {
                <p>I'm open to <span class="highlight">collaborations</span>, <span class="highlight">learning opportunities</span>, and <span class="highlight">project discussions</span>.</p>
                
                <div class="social-links">
-                  <a href="#"><i class="fab fa-github"></i></a>
-                  <a href="#"><i class="fab fa-linkedin"></i></a>
-                  <a href="#"><i class="fab fa-facebook-square"></i></a>
-                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="https://github.com/AustinSR256"><i class="fab fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/ssengendo-austin/""><i class="fab fa-linkedin"></i></a>
+                  <a href="https://www.facebook.com/ssengendo.austin"><i class="fab fa-facebook-square"></i></a>
+                  <a href="https://x.com/AusteinRol"><i class="fab fa-twitter"></i></a>
                </div>
             </div>
          </div>
