@@ -8,7 +8,6 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <style>
 
-
 /* Reset and base styles */
 * {
     margin: 0;
@@ -186,8 +185,58 @@ body {
     }
 }
 
+/* Welcome message styles */
+.welcome-message {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeInDown 0.8s ease-out;
+    position: relative;
+    display: inline-block;
+}
+
+.welcome-word {
+    position: relative;
+    display: inline-block;
+}
+
+.welcome-word::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    animation: underlineExpand 1.5s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes underlineExpand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 .home-info h1 {
     font-size: 3.5rem;
+    width: max-content;
     margin-bottom: 10px;
     background: linear-gradient(45deg, #fff, #f0f0f0);
     -webkit-background-clip: text;
@@ -530,6 +579,11 @@ body {
         gap: 30px;
     }
     
+    .welcome-message {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
     .home-info h1 {
         font-size: 2.5rem;
     }
@@ -576,6 +630,11 @@ body {
         font-size: 14px;
     }
     
+    .welcome-message {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
     .home-info h1 {
         font-size: 2rem;
     }
@@ -620,7 +679,6 @@ body {
     }
 }
 
-
 .home-info h1, .home-info h2 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -662,7 +720,6 @@ body {
     outline: 2px solid white;
     outline-offset: 2px;
 }
-
 
 .img-item::after {
     content: '📷';
@@ -709,7 +766,8 @@ body {
 
 <section class="home">
   <div class="home-info">
-    <h1>Ssengendo Austin</h1>
+    <div class="welcome-message"><span class="welcome-word">Welcome</span> to my portfolio</div>
+    <h1>I Am Ssengendo Austin</h1>
     <h2> I'm a  
       <span class="roles"></span>
     </h2>
