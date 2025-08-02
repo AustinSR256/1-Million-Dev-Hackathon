@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio | Ssengendo Austin</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
+
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -215,59 +218,119 @@ body {
     height: 2.5rem;
 }
 
-/* Animated roles */
+/* Letter by letter typewriter animation */
 .roles {
     position: relative;
     display: inline-block;
-    overflow: hidden;
+    min-width: 350px;
     height: 2.5rem;
-    min-width: 250px;
     vertical-align: middle;
+    font-size: 2rem;
+    font-weight: 600;
+    color: transparent;
+    overflow: hidden;
 }
 
-.roles span {
+.roles::before {
+    content: '';
     position: absolute;
     top: 50%;
     left: 0;
-    width: 100%;
-    opacity: 0;
-    animation: textRotate 8s infinite;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    color: white;
+    font-weight: 600;
+    font-size: 2rem;
     background: linear-gradient(45deg, #fff, #f0f0f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 600;
-    white-space: nowrap;
-    font-size: 2rem;
-    transform: translateY(-50%);
+    animation: typewriter-effect 10s infinite;
 }
 
-.roles span:nth-child(1) { animation-delay: 0s; }
-.roles span:nth-child(2) { animation-delay: 2s; }
-.roles span:nth-child(3) { animation-delay: 4s; }
-.roles span:nth-child(4) { animation-delay: 6s; }
-
-@keyframes textRotate {
-    0% { 
-        opacity: 0; 
-        transform: translateY(100%); 
-    }
-    12.5% { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-    25% { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
-    37.5% { 
-        opacity: 0; 
-        transform: translateY(-100%); 
-    }
-    100% { 
-        opacity: 0; 
-        transform: translateY(-100%); 
-    }
+@keyframes typewriter-effect {
+    /* Civil Engineer - Letter by letter typing */
+    0% { content: ''; }
+    1% { content: 'C'; }
+    2% { content: 'Ci'; }
+    3% { content: 'Civ'; }
+    4% { content: 'Civi'; }
+    5% { content: 'Civil'; }
+    6% { content: 'Civil '; }
+    7% { content: 'Civil E'; }
+    8% { content: 'Civil En'; }
+    9% { content: 'Civil Eng'; }
+    10% { content: 'Civil Engi'; }
+    11% { content: 'Civil Engin'; }
+    12% { content: 'Civil Engine'; }
+    13% { content: 'Civil Enginee'; }
+    14% { content: 'Civil Engineer'; }
+    
+    /* Civil Engineer - Display pause */
+    14%, 24% { content: 'Civil Engineer'; }
+    
+    /* Civil Engineer - Letter by letter erasing */
+    25% { content: 'Civil Enginee'; }
+    26% { content: 'Civil Engine'; }
+    27% { content: 'Civil Engin'; }
+    28% { content: 'Civil Engi'; }
+    29% { content: 'Civil Eng'; }
+    30% { content: 'Civil En'; }
+    31% { content: 'Civil E'; }
+    32% { content: 'Civil '; }
+    33% { content: 'Civil'; }
+    34% { content: 'Civi'; }
+    35% { content: 'Civ'; }
+    36% { content: 'Ci'; }
+    37% { content: 'C'; }
+    38% { content: ''; }
+    
+    /* Brief pause */
+    38%, 42% { content: ''; }
+    
+    /* Software Engineer - Letter by letter typing */
+    43% { content: 'S'; }
+    44% { content: 'So'; }
+    45% { content: 'Sof'; }
+    46% { content: 'Soft'; }
+    47% { content: 'Softw'; }
+    48% { content: 'Softwa'; }
+    49% { content: 'Softwar'; }
+    50% { content: 'Software'; }
+    51% { content: 'Software '; }
+    52% { content: 'Software E'; }
+    53% { content: 'Software En'; }
+    54% { content: 'Software Eng'; }
+    55% { content: 'Software Engi'; }
+    56% { content: 'Software Engin'; }
+    57% { content: 'Software Engine'; }
+    58% { content: 'Software Enginee'; }
+    59% { content: 'Software Engineer'; }
+    
+    /* Software Engineer - Display pause */
+    59%, 69% { content: 'Software Engineer'; }
+    
+    /* Software Engineer - Letter by letter erasing */
+    70% { content: 'Software Enginee'; }
+    71% { content: 'Software Engine'; }
+    72% { content: 'Software Engin'; }
+    73% { content: 'Software Engi'; }
+    74% { content: 'Software Eng'; }
+    75% { content: 'Software En'; }
+    76% { content: 'Software E'; }
+    77% { content: 'Software '; }
+    78% { content: 'Software'; }
+    79% { content: 'Softwar'; }
+    80% { content: 'Softwa'; }
+    81% { content: 'Softw'; }
+    82% { content: 'Soft'; }
+    83% { content: 'Sof'; }
+    84% { content: 'So'; }
+    85% { content: 'S'; }
+    86% { content: ''; }
+    
+    /* Final pause before loop */
+    86%, 100% { content: ''; }
 }
 
 .home-info p {
@@ -477,6 +540,12 @@ body {
     
     .roles {
         height: 2rem;
+        font-size: 1.5rem;
+        min-width: 280px;
+    }
+    
+    .roles::before {
+        font-size: 1.5rem;
     }
     
     .btn-sci {
@@ -515,6 +584,16 @@ body {
         font-size: 1.3rem;
     }
     
+    .roles {
+        height: 1.8rem;
+        font-size: 1.3rem;
+        min-width: 240px;
+    }
+    
+    .roles::before {
+        font-size: 1.3rem;
+    }
+    
     .home-info p {
         font-size: 1rem;
     }
@@ -541,7 +620,7 @@ body {
     }
 }
 
-/* Additional enhancements */
+
 .home-info h1, .home-info h2 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -584,7 +663,7 @@ body {
     outline-offset: 2px;
 }
 
-/* Placeholder for missing image */
+
 .img-item::after {
     content: '📷';
     position: absolute;
@@ -632,16 +711,12 @@ body {
   <div class="home-info">
     <h1>Ssengendo Austin</h1>
     <h2> I'm a  
-      <span class="roles">
-        <span style="--i:0" data-text=" Civil Engineer">Civil Engineer</span>
-        <span style="--i:1" data-text=" Software Developer"> Software Developer</span>
-        <span style="--i:2" data-text=" Data Analyst">Data Analyst</span>
-        <span style="--i:3" data-text="Designer "> Designer</span>
-      </span>
+      <span class="roles"></span>
     </h2>
 
-    <p>Passionate about bridging the gap between engineering and technology. I combine my expertise in civil engineering with modern software development and data analysis to create innovative solutions that make a real-world impact.</p>
-  
+   <p>Passionate about uniting engineering principles with cutting-edge technology,
+     I leverage my  expertise in civil engineering  and software development to design impactful, future-ready solutions.</p>
+
     <div class="btn-sci">
       <a href="cv.pdf" class="btn">Download CV</a>
       <div class="sci">
