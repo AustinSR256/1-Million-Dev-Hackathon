@@ -43,6 +43,6 @@ This is a personal portfolio website designed to showcase professional services 
 
 The portfolio website is deployed and publicly accessible through GitHub Pages:
 
-🔗 [View Live Website](https://austinsr256.github.io/1-Million-Dev-Hackathon/contact.html)
+🔗 [View Live Website](https://austinsr256.github.io/1-Million-Dev-Hackathon/index.html)
 
 You can navigate to the homepage and other sections using the site's navigation menu.
